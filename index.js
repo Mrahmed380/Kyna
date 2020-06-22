@@ -69,7 +69,7 @@ client.on('ready', () => {
 
   client.on("message", function(message) {
     if (message.content === "happy") {
-      message.channel.send("me too ♥");
+      message.channel.send("I am happy too! 😄");
     }
   });
 
