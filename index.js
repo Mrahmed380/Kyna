@@ -62,16 +62,14 @@ client.on('ready', () => {
   });
 
   client.on("message", message => {
-    if (message.content === "k/happy") {
+    if (message.content === "happy") {
       message.react("😄");
     }
   });
 
   client.on("message", function(message) {
-    if (message.content === "카이나 정보") {
-      message.channel.send("사는곳: Republic of Korea");
-      message.channel.send("취미: 노래 듣기");
-      message.channel.send("제작자: Lil_Bloody");
+    if (message.content === "happy") {
+      message.channel.send("me too ♥");
     }
   });
 
