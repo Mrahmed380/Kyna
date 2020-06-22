@@ -62,8 +62,9 @@ client.on('ready', () => {
   });
 
   client.on("message", message => {
-    if (message.content === "!react") {
+    if (message.content === "happy") {
       message.react("😄");
+      message.channel.send("행복~");
     }
   });
 
