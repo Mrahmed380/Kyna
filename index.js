@@ -4,7 +4,7 @@ const { Client, MessageEmbed } = require("discord.js");
 
 client.on('ready', () => {
     console.log('(っ◔◡◔)っ ♥ Kyna ♥');
-    client.user.setActivity("k/help");
+    client.user.setActivity("prefix: k/");
   });
 
   client.on("message", message => {
