@@ -100,7 +100,9 @@ client.on('ready', () => {
     }
   });
   
-if (msg.content === 'ping') {
+
+  client.on("message", message => {
+    if (message.content === "ping") {
   msg.reply('Pong! `' + Math.floor(client.ping) + ' ms`');
 }
 
