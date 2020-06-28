@@ -100,5 +100,8 @@ client.on('ready', () => {
     }
   });
   
+if (msg.content === 'ping') {
+  msg.reply('Pong! `' + Math.floor(client.ping) + ' ms`');
+}
 
 client.login(process.env.token);
