@@ -99,12 +99,5 @@ client.on('ready', () => {
       message.channel.send(embed);
     }
   });
-  
-
-  client.on("message", message => {
-    if (message.content === "ping") {
-        message.channel.send('Pong! `' + Math.floor(client.ping) + ' ms`');
-    }
-  });
 
 client.login(process.env.token);
