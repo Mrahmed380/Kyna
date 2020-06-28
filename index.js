@@ -103,7 +103,8 @@ client.on('ready', () => {
 
   client.on("message", message => {
     if (message.content === "ping") {
-  msg.reply('Pong! `' + Math.floor(client.ping) + ' ms`');
-}
+        message.channel.send('Pong! `' + Math.floor(client.ping) + ' ms`');
+    }
+  });
 
 client.login(process.env.token);
