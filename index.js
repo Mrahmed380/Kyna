@@ -67,7 +67,7 @@ client.on('ready', () => {
     }
   });
 
-  client.on("message", function(message) {
+  client.on("message", message => {
     if (message.content === "happy") {
       message.channel.send(`${user.tag} happy too! 😄`);
     }
