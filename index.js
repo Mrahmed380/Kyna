@@ -67,12 +67,6 @@ client.on('ready', () => {
     }
   });
 
-  client.on("message", function(message) {
-    if (message.content === "happy") {
-      message.channel.send("happy too! 😄");
-    }
-  });
-
   client.on("message", message => {
     if (message.content === "k/di Lil_Bloody") {
       const embed = new MessageEmbed()
