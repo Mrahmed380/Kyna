@@ -145,5 +145,5 @@ client.on("message", async message => {
        .setColor('0x1fd3f7');
        const msg = await message.channel.send(embed)
        msg.react('
-
+✅
 client.login(process.env.token);
