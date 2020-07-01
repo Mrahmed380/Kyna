@@ -144,6 +144,21 @@ client.on("message", async message => {
        .setFooter('규칙을 잘지켜주세요!')
        .setColor('0x1fd3f7');
        const msg = await message.channel.send(embed)
-       msg.react('
-✅
+       msg.react('✅');
+
+});
+
+client.on('messageReactionAdd', async (reaction, user) => {
+     if(reaction.message.partial) await reaction.message.farch();
+     if(reaction.partial) await reaction.fetch();
+
+     if(user.bot) return;
+     if(!reaction.message.channel.id === '') {
+       if(reaction.emoji.name ==== '✅') {
+	 await reaction.message.guild.members.cache.get(user.id).roles.add('')
+       }
+     }
+   })
+
+
 client.login(process.env.token);
