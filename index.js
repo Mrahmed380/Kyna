@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const request = require('request-promise');
+const cheerio = require('cheerio');
 const { Client, MessageEmbed } = require("discord.js");
 
 client.on('ready', () => {
@@ -114,6 +116,19 @@ client.on("message", async message => {
         await msgEmbed.react('👎')
     }
 
+})
+
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = message.content.substring(message.content.indexOf(' ')+1);
+
+    if (cmd === '-subs'){
+        let youtubechannelurl = 'https://www.youtube.com/user/bambinoonico';
+        let response = await request(youtubechannelurl)
+        let $ = cheerio.load(response)
+        let subscriberCount = $('[class="yt-subscription-button-subscriber-count-branded-horizontal subscribed yt-uix-tooltip"]').attr('title');
+        message.reply(`DashCraft Has ${subscriberCount} on YouTube!`)
+    }
 })
 
 
