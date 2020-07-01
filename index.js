@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const bot = new Discord.Client();
 const { Client, MessageEmbed } = require("discord.js");
 
 client.on('ready', () => {
@@ -116,7 +117,7 @@ client.on("message", async message => {
 
 })
 
-client.on("message", async message => {
+bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
 
     const messageArray = message.content.split(' ');
@@ -136,29 +137,28 @@ client.on("message", async message => {
 
 })
 
-    if (cmd === 'Verify')
-       message.delete();
-       const embed = new Discord.MessageEmbed()
+    if (cmd === 'Verify'){
+       const embed = Discord.MessageEmbed()
        .setTitle('**Verify**')
        .setDescription('**1.** I want to invite a Kyna bot to my server.\n**2.** Kyna bot is not working.\n**3.** Kick or Ben commands do not work.\n**4.** When clearing, messages older than 2 weeks cannot be deleted.\n**5.** I would like to report a bug.\n**6.**')
        .setFooter('규칙을 잘지켜주세요!')
-       .setColor('0x1fd3f7');
-       const msg = await message.channel.send(embed)
-       msg.react('✅');
-
-});
-
-client.on('messageReactionAdd', async (reaction, user) => {
-     if(reaction.message.partial) await reaction.message.farch();
-     if(reaction.partial) await reaction.fetch();
-
-     if(user.client) return;
-     if(!reaction.message.channel.id === '727704328558739486') {
-       if(reaction.emoji.name ==== '✅') {
-	 await reaction.message.guild.members.cache.get(user.id).roles.add('727395458833580062')
-       }
+       .setColor('0x1fd3f7')
+       let msgEmbed = await message.channel.send(embed)
+       msgEmbed.react('✅');
      }
-   })
+})
+
+bot.on('messageReactionAdd', async (reaction, user) => {
+    if(reaction.message.partial) await reaction.message.farch();
+    if(reaction.partial) await reaction.fetch();
+
+    if(user.bot) return;
+    if(!reaction.message.channel.id === '727704328558739486') {
+       if(reaction.emoji.name ==== '✅') {
+	  await reaction.message.guild.members.cache.get(user.id).roles.add('727395458833580062')
+       }
+    }
+})
 
 
 client.login(process.env.token);
