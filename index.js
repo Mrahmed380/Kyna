@@ -136,7 +136,7 @@ client.on("message", async message => {
 
 })
 
-    if (cmd === `Verify`)
+    if (cmd === 'Verify')
        message.delete();
        const embed = new Discord.MessageEmbed()
        .setTitle('**Verify**')
