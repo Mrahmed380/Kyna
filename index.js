@@ -108,7 +108,7 @@ client.on("message", async message => {
         let embedPoll = new Discord.MessageEmbed()
         .setTitle('😲 New Poll! 😲')
         .setDescription(pollDescription)
-        .setColor('YELLOW')
+        .setColor('RAINBOW')
         let msgEmbed = await pollChannel.send(embedPoll);
         await msgEmbed.react('👍')
         await msgEmbed.react('👎')
