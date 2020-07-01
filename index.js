@@ -153,9 +153,9 @@ client.on('messageReactionAdd', async (reaction, user) => {
      if(reaction.partial) await reaction.fetch();
 
      if(user.bot) return;
-     if(!reaction.message.channel.id === '') {
+     if(!reaction.message.channel.id === '727704328558739486') {
        if(reaction.emoji.name ==== '✅') {
-	 await reaction.message.guild.members.cache.get(user.id).roles.add('')
+	 await reaction.message.guild.members.cache.get(user.id).roles.add('727395458833580062')
        }
      }
    })
