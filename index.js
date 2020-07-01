@@ -152,7 +152,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
      if(reaction.message.partial) await reaction.message.farch();
      if(reaction.partial) await reaction.fetch();
 
-     if(user.bot) return;
+     if(user.client) return;
      if(!reaction.message.channel.id === '727704328558739486') {
        if(reaction.emoji.name ==== '✅') {
 	 await reaction.message.guild.members.cache.get(user.id).roles.add('727395458833580062')
