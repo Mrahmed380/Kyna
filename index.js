@@ -118,17 +118,4 @@ client.on("message", async message => {
 
 })
 
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = message.content.substring(message.content.indexOf(' ')+1);
-
-    if (cmd === '-subs'){
-        let youtubechannelurl = 'https://www.youtube.com/user/bambinoonico';
-        let response = await request(youtubechannelurl)
-        let $ = cheerio.load(response)
-        let subscriberCount = $('[class="yt-subscription-button-subscriber-count-branded-horizontal subscribed yt-uix-tooltip"]').attr('title');
-        message.reply(`鹿乃チャンネルofficial Has ${subscriberCount} on YouTube!`)
-    }
-})
-
 client.login(process.env.token);
