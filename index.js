@@ -116,24 +116,5 @@ client.on("message", async message => {
 
 })
 
-client.on("message", async message => {
-    if(message.author.bot || message.channel.type === "dm") return;
-
-    const messageArray = message.content.split(' ');
-	const cmd = messageArray[0];
-	const args = messageArray.slice(1);
-
-    if (cmd === '-rule'){
-        let pollChannel = message.mentions.channels.first();
-        let pollDescription = args.slice(1).join(' ');
-
-        let embedPoll = new Discord.MessageEmbed()
-        .setTitle('**Rules**')
-        .setDescription(pollDescription)
-        .setColor('0x1fd3f7')
-        let msgEmbed = await pollChannel.send(embedPoll);
-    }
-
-})
 
 client.login(process.env.token);
