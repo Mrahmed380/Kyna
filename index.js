@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const bot = new Discord.Client();
 const { Client, MessageEmbed } = require("discord.js");
 
 client.on('ready', () => {
@@ -136,30 +135,5 @@ bot.on("message", async message => {
     }
 
 })
-
-    if (cmd === 'Verify'){
-       let embed = new Discord.MessageEmbed()
-       .setTitle('Verify')
-       .setDescription('TexT')
-       .setFooter('규칙을 잘지켜주세요!')
-       .setColor('0x1fd3f7')
-       let msgEmbed = await message.channel.send(embed)
-       msgEmbed.react('✅')
-     }
-})
-
-bot.on('messageReactionAdd', async (reaction, user) => {
-    if (reaction.message.partial) await reaction.message.farch();
-    if (reaction.partial) await reaction.fetch();
-
-    if(user.bot) return;
-    if (!reaction.message.guild) return;
-
-    if(reaction.message.channel.id === '727704328558739486') {
-       if(reaction.emoji.name ==== '✅'){
-	  await reaction.message.guild.members.cache.get(user.id).roles.add('727395458833580062')
-       }
-    }
-});
 
 client.login(process.env.token);
