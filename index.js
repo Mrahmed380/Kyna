@@ -118,9 +118,6 @@ client.on("message", async message => {
 
 })
 
-client.on("message", async message => {
-    if(message.author.bot || message.channel.type === "dm") return;
-
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = message.content.substring(message.content.indexOf(' ')+1);
