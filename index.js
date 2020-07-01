@@ -140,7 +140,7 @@ client.on("message", async message => {
        message.delete();
        const embed = new Discord.MessageEmbed()
        .setTitle(`**Verify**`)
-       .setDescription('**1.** I want to invite a Kyna bot to my server.\n**2.** Kyna bot is not working.\n**3.** Kick or Ben commands do not work.\n**4.** When clearing, messages older than 2 weeks cannot be deleted.\n**5.** I would like to report a bug.\n**6.** 
+       .setDescription('**1.** I want to invite a Kyna bot to my server.\n**2.** Kyna bot is not working.\n**3.** Kick or Ben commands do not work.\n**4.** When clearing, messages older than 2 weeks cannot be deleted.\n**5.** I would like to report a bug.\n**6.**) 
        .setFooter('규칙을 잘지켜주세요!')
        .setColor('0x1fd3f7');
        const msg = await message.channel.send(embed)
