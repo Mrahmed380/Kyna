@@ -116,6 +116,13 @@ client.on("message", async message => {
 
 })
 
+client.on("message", async message => {
+    if(message.author.bot || message.channel.type === "dm") return;
+
+    const messageArray = message.content.split(' ');
+	const cmd = messageArray[0];
+	const args = messageArray.slice(1);
+
     if (cmd === '-rule'){
         let pollChannel = message.mentions.channels.first();
         let pollDescription = args.slice(1).join(' ');
