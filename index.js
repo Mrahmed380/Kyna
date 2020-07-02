@@ -106,12 +106,26 @@ client.on("message", async message => {
         let pollDescription = args.slice(1).join(' ');
 
         let embedPoll = new Discord.MessageEmbed()
-        .setTitle('😲 New Poll! 😲')
+        .setTitle('**Poll**')
         .setDescription(pollDescription)
         .setColor('0x1fd3f7')
         let msgEmbed = await pollChannel.send(embedPoll);
         await msgEmbed.react('👍')
         await msgEmbed.react('👎')
+    }
+
+})
+
+    if (cmd === '-rule'){
+        let pollChannel = message.mentions.channels.first();
+        let pollDescription = args.slice(1).join(' ');
+	let pollDDDOO = args.slice(1).join(' ');
+
+        let embedPoll = new Discord.MessageEmbed()
+        .setTitle(pollDDDOO)
+        .setDescription(pollDescription)
+        .setColor('0x1fd3f7')
+        let msgEmbed = await pollChannel.send(embedPoll);
     }
 
 })
