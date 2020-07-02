@@ -106,7 +106,7 @@ client.on("message", async message => {
         let pollDescription = args.slice(1).join(' ');
 
         let embedPoll = new Discord.MessageEmbed()
-        .setTitle('**Poll**')
+        .setTitle('**POLL**')
         .setDescription(pollDescription)
         .setColor('0x1fd3f7')
         let msgEmbed = await pollChannel.send(embedPoll);
@@ -119,10 +119,9 @@ client.on("message", async message => {
     if (cmd === '-rule'){
         let pollChannel = message.mentions.channels.first();
         let pollDescription = args.slice(1).join(' ');
-	let pollDDDOO = args.slice(1).join(' ');
 
         let embedPoll = new Discord.MessageEmbed()
-        .setTitle(pollDDDOO)
+        .setTitle('RULES')
         .setDescription(pollDescription)
         .setColor('0x1fd3f7')
         let msgEmbed = await pollChannel.send(embedPoll);
