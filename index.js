@@ -136,18 +136,4 @@ client.on("message", async message => {
 
 })
 
-  client.on("message", message => {
-    if (message.content === "k/serverinfo") {
-      const embed = new MessageEmbed()
-        .setColor("RANDOM")
-        .setTitle("Server Info")
-        .setDescription(`${message.guild.name}'s information`)
-        .addField("Owner", `The owner of this server is ${message.guild.owner}`)
-        .addField("Member Count", `This server has ${message.guild.memberCount} members`)
-        .addField("Emoji Count", `This server has ${message.guild.emojis.size} emojis`)
-        .addField("Roles Count", `This server has ${message.guild.roles.size} roles`)
-      message.channel.send(embed);
-    }
-  });
-
 client.login(process.env.token);
