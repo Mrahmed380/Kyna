@@ -4,7 +4,7 @@ const { Client, MessageEmbed } = require("discord.js");
 
 client.on('ready', () => {
     console.log('(っ◔◡◔)っ ♥ Kyna ♥');
-    client.user.setActivity("Twitter: @KynaDiscord");
+    client.user.setActivity("Music | k/help");
   });
 
   client.on("message", message => {
