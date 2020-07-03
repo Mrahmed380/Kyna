@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const bot = new Discord.Client();
 const { Client, MessageEmbed } = require("discord.js");
 
 client.on('ready', () => {
@@ -136,7 +137,7 @@ client.on("message", async message => {
 
 })
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (bot, message, args) => {
     function checkDays(date) {
         let now = new Date();
         let diff = now.getTime() - date.getTime();
