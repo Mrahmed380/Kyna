@@ -136,7 +136,7 @@ client.on("message", async message => {
 
 })
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (client, message, args) => {
     function checkDays(date) {
         let now = new Date();
         let diff = now.getTime() - date.getTime();
@@ -177,7 +177,7 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-  name:"serverinfo"
+  name:"k/serverinfo"
 }
 
 client.login(process.env.token);
