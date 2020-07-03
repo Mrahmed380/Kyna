@@ -71,7 +71,7 @@ client.on('ready', () => {
     if (message.content === "k/di Lil_Bloody") {
       const embed = new MessageEmbed()
         .setTitle("**Dveloper Lil_Bloody information**")
-        .setColor(0xf8a5ff)
+        .setColor("RANDOM")
         .setThumbnail(
           "https://cdn.discordapp.com/attachments/644776656203939850/723703299227910174/unknown.png"
         )
@@ -108,7 +108,7 @@ client.on("message", async message => {
         let embedPoll = new Discord.MessageEmbed()
         .setTitle('**POLL**')
         .setDescription(pollDescription)
-        .setColor('0x1fd3f7')
+        .setColor('RANDOM')
         let msgEmbed = await pollChannel.send(embedPoll);
         await msgEmbed.react('👍')
         await msgEmbed.react('👎')
@@ -130,7 +130,7 @@ client.on("message", async message => {
         let embedPoll = new Discord.MessageEmbed()
         .setTitle('RULES')
         .setDescription(pollDescription)
-        .setColor('0x1fd3f7')
+        .setColor('RANDOM')
         let msgEmbed = await pollChannel.send(embedPoll);
     }
 
