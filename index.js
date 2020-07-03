@@ -136,9 +136,7 @@ client.on("message", async message => {
 
 })
 
-  client.on("message", message => {
-    if (message.content === "k/server") {
-	message.channel.send(`This server's name is: ${message.guild.name}`);
+else if (message.content === `server`) {
+	message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
 }
-
 client.login(process.env.token);
