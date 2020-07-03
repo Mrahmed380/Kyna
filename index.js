@@ -136,7 +136,7 @@ client.on("message", async message => {
 
 })
 
-else if (message.content === `${prefix}server`) {
+else if (message.content === 'server') {
 	message.channel.send(`This server's name is: ${message.guild.name}`);
 }
 
