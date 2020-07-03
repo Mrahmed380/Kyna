@@ -192,9 +192,6 @@ client.on('message', async message => {
   }
 });
 
-client.login(process.env.TOKEN); // Put your token into the .env
-// Make sure to lock your project. Go to the your name project and click "Make This Project Private"
-
 function formatBytes (a, b) {
   if (0 == a) return "0 Bytes";
   let c = 1024,
