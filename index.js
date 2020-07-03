@@ -136,8 +136,9 @@ client.on("message", async message => {
 
 })
 
-if(message.content.startsWith("k/serveurinfo")) {
-        let si = new Discord.MessageEmbed()
+  client.on("message", message => {
+    if (message.content === "k/serverinfo") {
+      const embed = new MessageEmbed()
         .setColor("RANDOM")
         .setTitle("Server Info")
         .setDescription(`${message.guild.name}'s information`)
@@ -145,9 +146,8 @@ if(message.content.startsWith("k/serveurinfo")) {
         .addField("Member Count", `This server has ${message.guild.memberCount} members`)
         .addField("Emoji Count", `This server has ${message.guild.emojis.size} emojis`)
         .addField("Roles Count", `This server has ${message.guild.roles.size} roles`)
-
-    message.channel.send(si);
-
+      message.channel.send(embed);
     }
+  });
 
 client.login(process.env.token);
