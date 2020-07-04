@@ -68,33 +68,6 @@ client.on('ready', () => {
   });
 
   client.on("message", message => {
-    if (message.content === "k/di Lil_Bloody") {
-      const embed = new MessageEmbed()
-        .setTitle("**Dveloper Lil_Bloody information**")
-        .setColor("RANDOM")
-        .setThumbnail(
-          "https://cdn.discordapp.com/attachments/644776656203939850/723703299227910174/unknown.png"
-        )
-        .addField("**Where to live** ", "[Korea]")
-        .addField("**Birthday** ", "[April 6]")
-        .addField("**Team** ", "[Kyna TM]")
-        .addField("**Kyna Support server rank** ", "[Owner]")
-        .addField(
-          "**Twitter:**",
-          "[LilBloody_Twitter](https://twitter.com/LilBloody_)",
-          true
-        )
-        .addField(
-            "**Twitter:**",
-            "[Kyna_Twitter](https://twitter.com/KynaDiscord)",
-            true
-          )
-        .setFooter("Can I help? | k/help", "https://cdn.discordapp.com/attachments/644776656203939850/723703299227910174/unknown.png");
-      message.channel.send(embed);
-    }
-  });
-
-  client.on("message", message => {
     if (message.content === "k/di LOL") {
       const embed = new MessageEmbed()
         .setTitle("**Dveloper Lil_Bloody information**")
