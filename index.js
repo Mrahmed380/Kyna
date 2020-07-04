@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const { Client, MessageEmbed } = require("discord.js");
 
 client.on('ready', () => {
-    console.log('(っ◔◡◔)っ ♥ Kyna ♥');
+    console.log('っ◔◡◔)っ Kyna Bot Onilne!');
     client.user.setActivity("k/help");
   });
 
