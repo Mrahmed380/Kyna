@@ -137,7 +137,7 @@ client.on("message", async message => {
 })
 
 client.on("message", message => {
-    if (message.content === "k/di Lil_Bloody") {
+    if (message.content === "k/test") {
       const embed = new MessageEmbed()
         .setTitle("**Dveloper Lil_Bloody information**")
         .setColor("0xffffff")
