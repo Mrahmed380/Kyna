@@ -145,11 +145,7 @@ client.on("message", message => {
         .addField("**Birthday** ", "[April 6]")
         .addField("**Team** ", "[Kyna TM]")
         .addField("**Kyna Support server rank** ", "[Owner]")
-        .addField(
-          "**Twitter:**",
-          "[LilBloody_Twitter](https://twitter.com/ShellyDev_TwT)",
-          true
-        )
+        .addField("**Twitter:**", "[LilBloody_Twitter](https://twitter.com/ShellyDev_TwT)", true)
         .setFooter("Can I help? | k/help", "https://cdn.discordapp.com/attachments/644776656203939850/723703299227910174/unknown.png");
       message.channel.send(embed);
     }
