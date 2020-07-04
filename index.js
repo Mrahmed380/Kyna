@@ -140,7 +140,7 @@ client.on("message", message => {
     if (message.content === "k/test") {
       const embed = new MessageEmbed()
         .setTitle("**Dveloper Lil_Bloody information**")
-        .setColor("0xffffff")
+        .setColor("RANDOM")
         .addField("**Where to live** ", "[Korea]")
         .addField("**Birthday** ", "[April 6]")
         .addField("**Team** ", "[Kyna TM]")
