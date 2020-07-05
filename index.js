@@ -155,7 +155,7 @@ client.on("message", async message => {
 
  client.on("message", message => {
     if (message.content === "k/embed") {
-const exampleEmbed = new Discord.MessageEmbed()
+      const embed = new MessageEmbed()
 	.setColor('#0099ff')
 	.setTitle('Some title')
 	.setURL('https://discord.js.org/')
@@ -172,7 +172,8 @@ const exampleEmbed = new Discord.MessageEmbed()
 	.setImage('https://i.imgur.com/wSTFkRM.png')
 	.setTimestamp()
 	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
-
-channel.send(exampleEmbed);
+      message.channel.send(embed);
+    }
+  });
 
 client.login(process.env.token);
