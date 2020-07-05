@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const { Client, MessageEmbed } = require("discord.js");
+const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTTION"]});
 
 client.on('ready', () => {
     console.log('っ◔◡◔)っ Kyna Bot Onilne!');
