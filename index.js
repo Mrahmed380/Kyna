@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const { Client, MessageEmbed } = require("discord.js");
-const bot = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTTION"]});
-const prefix = "!";
 
 client.on('ready', () => {
     console.log('っ◔◡◔)っ Kyna Bot Onilne!');
@@ -153,55 +151,6 @@ client.on("message", async message => {
         let msgEmbed = await pollChannel.send(embedPoll);
     }
 
-})
-bot.on("message", async message => {
-    if(message.author.bot || message.channel.type === "dm") return;
-
-  let prefix = botsettings.prefix;
-  let messageArray = message.content.split(" ");
-  let cmd = messageArray[0];
-  let args = messageArray.content.substring(message.content.indexOf(' ')+1);
-	
-  if(!message.content.startsWith(prefix)) return;
-  let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
-  if(commandfile) commandfile.run(bot,message,args)
-
-  if (cmd === `${prefix}reaction`){
-       let embed = new Discord.MessageEmbed()
-       .setTitle('Verify')
-       .setDescription('TexT')
-       .setColor('RANDOM')
-       let msgEmbed = await message.channel.send(embed)
-       msgEmbed.react('😐︎')
-     }
-})
-
-bot.on('messageReactionAdd', async (reaction, user) => {
-    if (reaction.message.partial) await reaction.message.farch();
-    if (reaction.partial) await reaction.fetch();
-
-    if(user.bot) return;
-    if (!reaction.message.guild) return;
-
-    if(reaction.message.channel.id === '723112243079675947') {
-       if(reaction.emoji.name ==== '😐︎'){
-          await reaction.message.guild.members.cache.get(user.id).roles.add('727395458833580062')
-       }
-    }
-})
-
-bot.on('messageReactionRemove', async (reaction, user) => {
-    if (reaction.message.partial) await reaction.message.farch();
-    if (reaction.partial) await reaction.fetch();
-
-    if(user.bot) return;
-    if (!reaction.message.guild) return;
-
-    if(reaction.message.channel.id === '723112243079675947') {
-       if(reaction.emoji.name ==== '😐︎'){
-          await reaction.message.guild.members.cache.get(user.id).roles.remove('727395458833580062')
-       }
-    }
 })
 
 client.login(process.env.token);
