@@ -153,7 +153,7 @@ client.on("message", async message => {
 
 })
 
-if (cmd === '!Verify'){
+if (cmd === '!reaction'){
        let embed = new Discord.MessageEmbed()
        .setTitle('Verify')
        .setDescription('TexT')
@@ -168,28 +168,28 @@ client.on('messageReactionAdd', async (reaction, user) => {
     if (reaction.message.partial) await reaction.message.farch();
     if (reaction.partial) await reaction.fetch();
 
-    if(user.bot) return;
+    if(user.clinet) return;
     if (!reaction.message.guild) return;
 
     if(reaction.message.channel.id === '723112243079675947') {
        if(reaction.emoji.name ==== '😐︎'){
-      await reaction.message.guild.members.cache.get(user.id).roles.add('727395458833580062')
+          await reaction.message.guild.members.cache.get(user.id).roles.add('727395458833580062')
        }
     }
-});
+})
 
-client.on('messageReactionAdd', async (reaction, user) => {
+client.on('messageReactionRemove', async (reaction, user) => {
     if (reaction.message.partial) await reaction.message.farch();
     if (reaction.partial) await reaction.fetch();
 
-    if(user.bot) return;
+    if(user.clinet) return;
     if (!reaction.message.guild) return;
 
     if(reaction.message.channel.id === '723112243079675947') {
        if(reaction.emoji.name ==== '😐︎'){
-      await reaction.message.guild.members.cache.get(user.id).roles.remove('727395458833580062')
+          await reaction.message.guild.members.cache.get(user.id).roles.remove('727395458833580062')
        }
     }
-});
+})
 
 client.login(process.env.token);
