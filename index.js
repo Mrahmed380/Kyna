@@ -1,11 +1,13 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const bot = new Discord.Client();
 const { Client, MessageEmbed } = require("discord.js");
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTTION"]});
+const prefix = "!";
 
 client.on('ready', () => {
     console.log('っ◔◡◔)っ Kyna Bot Onilne!');
-    client.user.setActivity("k/help");
+    client.user.setActivity("Dm으로 보내진건 TOKEN이 털려서 보내진겁니다. 죄송합니당;;");
   });
 
   client.on("message", message => {
@@ -153,23 +155,33 @@ client.on("message", async message => {
     }
 
 })
+bot.on("message", async message => {
+    if(message.author.bot || message.channel.type === "dm") return;
 
-if (cmd === '!reaction'){
+  let prefix = botsettings.prefix;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.content.substring(message.content.indexOf(' ')+1);
+	
+  if(!message.content.startsWith(prefix)) return;
+  let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
+  if(commandfile) commandfile.run(bot,message,args)
+
+  if (cmd === `${prefix}reaction`){
        let embed = new Discord.MessageEmbed()
        .setTitle('Verify')
        .setDescription('TexT')
-       .setFooter('규칙을 잘지켜주세요!')
        .setColor('RANDOM')
        let msgEmbed = await message.channel.send(embed)
        msgEmbed.react('😐︎')
      }
 })
 
-client.on('messageReactionAdd', async (reaction, user) => {
+bot.on('messageReactionAdd', async (reaction, user) => {
     if (reaction.message.partial) await reaction.message.farch();
     if (reaction.partial) await reaction.fetch();
 
-    if(user.clinet) return;
+    if(user.bot) return;
     if (!reaction.message.guild) return;
 
     if(reaction.message.channel.id === '723112243079675947') {
@@ -179,11 +191,11 @@ client.on('messageReactionAdd', async (reaction, user) => {
     }
 })
 
-client.on('messageReactionRemove', async (reaction, user) => {
+bot.on('messageReactionRemove', async (reaction, user) => {
     if (reaction.message.partial) await reaction.message.farch();
     if (reaction.partial) await reaction.fetch();
 
-    if(user.clinet) return;
+    if(user.bot) return;
     if (!reaction.message.guild) return;
 
     if(reaction.message.channel.id === '723112243079675947') {
