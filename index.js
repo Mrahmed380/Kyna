@@ -1,31 +1,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const bot = new Discord.Client();
 const { Client, MessageEmbed } = require("discord.js");
-const PREFIX = "=";
 
 client.on('ready', () => {
     console.log('っ◔◡◔)っ Kyna Bot Onilne!');
     client.user.setActivity("Dm으로 보내진건 TOKEN이 털려서 보내진겁니다. 죄송합니당;;");
   });
-
-bot.on("message", async message => {  
-        if (message.author.bot) return;
-        if (!message.guild) return;
-        if (!message.content.startsWith(PREFIX)) return;
-    
-        const args = message.content.slice(PREFIX.length).trim().split(/ +/g);
-        const cmd = args.shift().toLowerCase();
-    
-        if (cmd === "ping") {
-            if(!message.member.hasPermission("MANAGE_MESSAGES")) return;
-            
-            const msg = await message.channel.send(`pinging...`);
-    
-            msg.edit(`pong! ${Math.round(bot.ping)}ms`);
-        }
-});
-
 
   client.on("message", message => {
     if (!message.guild) return;
@@ -200,7 +180,6 @@ bot.on('message', message => {
 
     }
 })
-
 
 
 client.login(process.env.token);
