@@ -153,7 +153,7 @@ client.on("message", async message => {
 
 })
 
-bot.on('message', message => {
+client.on('message', message => {
     if (message.content.toLowerCase() === '!test'){
         let filter = m => m.author.id === message.author.id;
         let q1 = new Discord.MessageCollector(message.channel, filter, {
