@@ -94,23 +94,6 @@ client.on('ready', () => {
     }
   });
 
- client.on("message", message => {
-    if (message.content === "k/help") {
-      const embed = new MessageEmbed()
-        .setTitle("**Dveloper Lil_Bloody information**")
-        .setColor("0xfbe3fd")
-        .setThumbnail("https://cdn.discordapp.com/attachments/644776656203939850/723703299227910174/unknown.png")
-        .addField("**Where to live** ", "[Korea]")
-        .addField("**Birthday** ", "[April 6]")
-        .addField("**Team** ", "[Kyna TM]")
-        .addField("**Kyna Support server rank** ", "[Owner]")
-        .addField("**Twitter:**", "[LilBloody_Twitter](https://twitter.com/LilBloody_)", true)
-        .addField("[Twitter](https://twitter.com/ShellyDev_TwT)", true)
-        .setFooter("Can I help? | k/help", "https://cdn.discordapp.com/attachments/644776656203939850/723703299227910174/unknown.png");
-      message.channel.send(embed);
-    }
-  });
-
 client.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
 
