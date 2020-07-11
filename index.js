@@ -4,7 +4,7 @@ const { Client, MessageEmbed } = require("discord.js");
 
 client.on('ready', () => {
     console.log('っ◔◡◔)っ Kyna Bot Onilne!');
-    client.user.setActivity("Dm으로 보내진건 TOKEN이 털려서 보내진겁니다. 죄송합니당;;");
+    client.user.setActivity("Onilne");
   });
 
   client.on("message", message => {
