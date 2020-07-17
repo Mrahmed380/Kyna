@@ -1,22 +1,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const client = new Client();
 const { Client, MessageEmbed } = require("discord.js");
 
 client.on('ready', () => {
     console.log('っ◔◡◔)っ Kyna Bot Onilne!');
     client.user.setActivity("K/help");
   });
-
-client.on('message', message => {
-  if (message.content === 'how to embed') {
-    const embed = new MessageEmbed()
-      .setTitle('A slick little embed')
-      .setColor(0xff0000)
-      .setDescription('Hello, this is a slick embed!');
-    message.channel.send(embed);
-  }
-});
 
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.cache.find(ch => ch.name === 'member-log');
