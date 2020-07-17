@@ -1,25 +1,28 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const client = new Client();
 const { Client, MessageEmbed } = require("discord.js");
 
 client.on('ready', () => {
     console.log('っ◔◡◔)っ Kyna Bot Onilne!');
-    client.user.setActivity("Onilne");
+    client.user.setActivity("K/help");
   });
 
-client.on('guildMemberAdd', member => {
-  // Send the message to a designated channel on a server:
-  const channel = member.guild.channels.cache.find(ch => ch.name === 'member-log');
-  // Do nothing if the channel wasn't found on this server
-  if (!channel) return;
-  // Send the message, mentioning the member
-  channel.send(`Welcome to the server, ${member}`);
+client.on('message', message => {
+  if (message.content === 'how to embed') {
+    const embed = new MessageEmbed()
+      .setTitle('A slick little embed')
+      .setColor(0xff0000)
+      .setDescription('Hello, this is a slick embed!');
+    message.channel.send(embed);
+  }
 });
 
-client.on("message", function(message) {
-    if(message.content === "ping") {
-        client.message.send(author, `${member} pong`);
-    }
+client.on('guildMemberAdd', member => {
+  const channel = member.guild.channels.cache.find(ch => ch.name === 'member-log');
+  if (!channel) return;
+  channel.send(`Welcome to the server, ${member}`);
+});
 
   client.on("message", message => {
     if (!message.guild) return;
