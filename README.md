@@ -1,2 +1,2 @@
 # KYNA INFO
-Twitter: [Go](https://twitter.com/KynaDiscord)
+Twitter: [move](https://twitter.com/KynaDiscord)
