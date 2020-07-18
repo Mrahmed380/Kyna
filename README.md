@@ -1,2 +1,2 @@
-# Kyna
-Discord bot created by Kyna Team.
+# KYNA INFO
+Twitter: [Go](https://twitter.com/KynaDiscord)
