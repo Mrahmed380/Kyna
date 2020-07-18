@@ -3,4 +3,4 @@
 # KYNA INFO
 Twitter: [move](https://twitter.com/KynaDiscord)
 
-![Kyna.png](./image/KynaDiscord.png)
+![./image/KynaDiscord.png](https://discord.link/kyna)
