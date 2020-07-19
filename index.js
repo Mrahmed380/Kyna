@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const { Client, MessageEmbed } = require("discord.js");
-let config = require("./config.json");
 
 client.on('ready', () => {
     console.log('っ◔◡◔)っ Kyna Bot Onilne!');
@@ -13,15 +12,6 @@ client.on('guildMemberAdd', member => {
   if (!channel) return;
   channel.send(`Welcome to the server, ${member}`);
 });
-
-    if(command === 'ping') {
-    let embed = new Discord.RichEmbed()
-    .setColor(3447003)
-    .setTitle("Pong!!")
-    .setDescription(`${client.ping} ms,`)
-    .setFooter(`Requested by | ${msg.author.tag}`);
-    msg.channel.send(embed);
-    }
 
   client.on("message", message => {
     if (message.content === "sss") {
